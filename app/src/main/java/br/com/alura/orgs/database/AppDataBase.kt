@@ -11,7 +11,7 @@ import br.com.alura.orgs.model.Produto
 import java.security.AccessControlContext
 
 // Determina
-@Database(entities = [Produto::class], version = 1)
+@Database(entities = [Produto::class], version = 1, exportSchema = true)
 @TypeConverters(Converter::class)
 abstract class AppDataBase : RoomDatabase() {
     abstract fun produtoDao(): ProdutoDao
