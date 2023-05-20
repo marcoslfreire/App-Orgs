@@ -10,10 +10,6 @@ interface ProdutoDao {
 
     @Query("SELECT * FROM Produto")
     fun buscaTodos() : List<Produto>
-
-
-    @Query(value = "SELECT * FROM Produto")
-    fun buscaTodos() : List<Produto>
     @Insert
     fun salva(vararg produto: Produto)
 }
