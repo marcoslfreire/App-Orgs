@@ -15,9 +15,7 @@ import br.com.alura.orgs.ui.recyclerview.adapter.ListaProdutosAdapter
 import java.math.BigDecimal
 
 class ListaProdutosActivity : AppCompatActivity() {
-
-    private val dao = ProdutosDao()
-    private val adapter = ListaProdutosAdapter(context = this, produtos = dao.buscaTodos())
+    private val adapter = ListaProdutosAdapter(context = this, produtos = emptyList())
     private val binding by lazy {
         ActivityListaProdutosActivityBinding.inflate(layoutInflater)
     }
@@ -28,6 +26,7 @@ class ListaProdutosActivity : AppCompatActivity() {
         configuraRecyclerView()
         configuraFab()
 
+
         val db = databaseBuilder(
             this,
             AppDataBase::class.java,
@@ -37,16 +36,21 @@ class ListaProdutosActivity : AppCompatActivity() {
             .build()
         val  produtoDao = db.produtoDao()
         adapter.atualiza(produtoDao.buscaTodos())
+
     }
 
     override fun onResume() {
         super.onResume()
+
         val db = Room.databaseBuilder(
             this,
             AppDataBase::class.java,
             "orgs.db"
         ).allowMainThreadQueries()
             .build()
+
+        val db = AppDataBase.instanciaDB(this)
+
         val produtoDao = db.produtoDao()
         adapter.atualiza(produtoDao.buscaTodos())
     }

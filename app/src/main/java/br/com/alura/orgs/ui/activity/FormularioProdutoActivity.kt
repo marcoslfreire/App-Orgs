@@ -3,8 +3,6 @@ package br.com.alura.orgs.ui.activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
-import androidx.room.Room.databaseBuilder
-import br.com.alura.orgs.dao.ProdutosDao
 import br.com.alura.orgs.database.AppDataBase
 import br.com.alura.orgs.databinding.ActivityFormularioProdutoBinding
 import br.com.alura.orgs.extensions.tentaCarregarImagem
@@ -25,11 +23,10 @@ class FormularioProdutoActivity : AppCompatActivity() {
         title = "Cadastrar produto"
         configuraBotaoSalvar()
         binding.activityFormularioProdutoImagem.setOnClickListener {
-            FormularioImagemDialog(this)
-                .mostra(url) { imagem ->
-                    url = imagem
-                    binding.activityFormularioProdutoImagem.tentaCarregarImagem(url)
-                }
+            FormularioImagemDialog(this).mostra(url) { imagem ->
+                url = imagem
+                binding.activityFormularioProdutoImagem.tentaCarregarImagem(url)
+            }
         }
     }
 
@@ -47,11 +44,16 @@ class FormularioProdutoActivity : AppCompatActivity() {
             produtoDao.salva(
                 produtoNovo
             )
+        val db = AppDataBase.instanciaDB(this)
+        val produtoDao = db.produtoDao()
+        botaoSalvar.setOnClickListener {
+            val produtoNovo = criaProduto()
+            produtoDao.salva(produtoNovo)
             finish()
         }
     }
 
-    private fun criaProduto(): Produto {
+    fun criaProduto(): Produto {
         val campoNome = binding.activityFormularioProdutoNome
         val nome = campoNome.text.toString()
         val campoDescricao = binding.activityFormularioProdutoDescricao
@@ -65,11 +67,8 @@ class FormularioProdutoActivity : AppCompatActivity() {
         }
 
         return Produto(
-            nome = nome,
-            descricao = descricao,
-            valor = valor,
-            imagem = url
+            nome = nome, descricao = descricao, valor = valor, imagem = url
         )
     }
 
-}
+}}
