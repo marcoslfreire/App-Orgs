@@ -45,16 +45,15 @@ android {
 }
 
 dependencies {
-<<<<<<< HEAD
+
     def room_version = "2.4.1"
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
-=======
-    def room_version = '2.5.0'
+
+    def new_room_version = '2.5.0'
     //noinspection GradleDependency
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
->>>>>>> d80b83ca3e289c722268576040694d0e94d91410
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.9.0'
