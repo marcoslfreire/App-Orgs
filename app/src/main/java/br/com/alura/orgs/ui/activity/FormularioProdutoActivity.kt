@@ -41,13 +41,6 @@ class FormularioProdutoActivity : AppCompatActivity() {
         val produtoDao = db.produtoDao()
         botaoSalvar.setOnClickListener {
             val produtoNovo = criaProduto()
-            produtoDao.salva(
-                produtoNovo
-            )
-        val db = AppDataBase.instanciaDB(this)
-        val produtoDao = db.produtoDao()
-        botaoSalvar.setOnClickListener {
-            val produtoNovo = criaProduto()
             produtoDao.salva(produtoNovo)
             finish()
         }
@@ -71,4 +64,4 @@ class FormularioProdutoActivity : AppCompatActivity() {
         )
     }
 
-}}
+}

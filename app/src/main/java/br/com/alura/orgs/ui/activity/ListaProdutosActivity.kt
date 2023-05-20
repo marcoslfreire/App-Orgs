@@ -21,8 +21,7 @@ class ListaProdutosActivity : AppCompatActivity() {
         configuraRecyclerView()
         configuraFab()
 
-
-        val db = databaseBuilder(
+        val db = Room.databaseBuilder(
             this,
             AppDataBase::class.java,
             "orgs.db"
@@ -41,12 +40,10 @@ class ListaProdutosActivity : AppCompatActivity() {
             this,
             AppDataBase::class.java,
             "orgs.db"
+
         ).allowMainThreadQueries()
             .build()
-
-        val db = AppDataBase.instanciaDB(this)
-
-        val produtoDao = db.produtoDao()
+        val  produtoDao = db.produtoDao()
         adapter.atualiza(produtoDao.buscaTodos())
     }
 
