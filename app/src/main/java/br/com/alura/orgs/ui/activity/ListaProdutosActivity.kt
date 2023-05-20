@@ -36,13 +36,7 @@ class ListaProdutosActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        val db = Room.databaseBuilder(
-            this,
-            AppDataBase::class.java,
-            "orgs.db"
-
-        ).allowMainThreadQueries()
-            .build()
+        val db = AppDataBase.instanciaDB(this)
         val  produtoDao = db.produtoDao()
         adapter.atualiza(produtoDao.buscaTodos())
     }

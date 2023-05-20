@@ -16,12 +16,6 @@ import br.com.alura.orgs.model.Produto
 abstract class AppDataBase: RoomDatabase() {
     abstract fun produtoDao(): ProdutoDao
 
-
-@Database(entities = [Produto::class], version = 1, exportSchema = true)
-@TypeConverters(Converter::class)
-abstract class AppDataBase : RoomDatabase() {
-    abstract fun produtoDao(): ProdutoDao
-
     companion object {
         fun instanciaDB(context: Context): AppDataBase {
             return Room.databaseBuilder(
@@ -31,4 +25,4 @@ abstract class AppDataBase : RoomDatabase() {
                 .build()
         }
     }
-}}
+}

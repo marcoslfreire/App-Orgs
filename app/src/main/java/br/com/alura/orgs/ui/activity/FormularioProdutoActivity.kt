@@ -32,12 +32,7 @@ class FormularioProdutoActivity : AppCompatActivity() {
 
     private fun configuraBotaoSalvar() {
         val botaoSalvar = binding.activityFormularioProdutoBotaoSalvar
-        val db = Room.databaseBuilder(
-            this,
-            AppDataBase::class.java,
-            "orgs.db"
-        ).allowMainThreadQueries()
-            .build()
+        val db = AppDataBase.instanciaDB(this)
         val produtoDao = db.produtoDao()
         botaoSalvar.setOnClickListener {
             val produtoNovo = criaProduto()
