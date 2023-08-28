@@ -23,7 +23,7 @@ class DetalhesProdutoActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
-        menuInflater.inflate(R.menu.menu_detalhes_produtos,menu)
+        menuInflater.inflate(R.menu.menu_detalhes_produto,menu)
         return super.onCreateOptionsMenu(menu)
     }
 

@@ -72,5 +72,13 @@
             app:layout_constraintTop_toBottomOf="@+id/activity_detalhes_produto_imagem"
             tools:text="R$ 1299,99" />
 
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="232dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            tools:layout_editor_absoluteX="178dp"
+            tools:layout_editor_absoluteY="225dp" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

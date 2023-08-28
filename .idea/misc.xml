@@ -3,12 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/mfreirec/AndroidStudioProjects/orgs/app/src/main/res/layout/activity_formulario_produto.xml" value="0.11574074074074074" />
+        <entry key="..\:/Users/mfreirec/AndroidStudioProjects/orgs/app/src/main/res/layout/activity_detalhes_produto.xml" value="0.23233695652173914" />
+        <entry key="..\:/Users/mfreirec/AndroidStudioProjects/orgs/app/src/main/res/layout/activity_formulario_produto.xml" value="0.25" />
         <entry key="..\:/Users/mfreirec/AndroidStudioProjects/orgs/app/src/main/res/layout/activity_lista_produtos_activity.xml" value="0.4984375" />
         <entry key="..\:/Users/mfreirec/AndroidStudioProjects/orgs/app/src/main/res/layout/formulario_imagem.xml" value="0.128" />
         <entry key="..\:/Users/mfreirec/AndroidStudioProjects/orgs/app/src/main/res/layout/produto_item.xml" value="0.1" />
         <entry key="..\:/Users/mfreirec/AndroidStudioProjects/orgs/app/src/main/res/menu-v11/menu_detalhes_produtos.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/mfreirec/AndroidStudioProjects/orgs/app/src/main/res/menu/menu_detalhes_produtos.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/mfreirec/AndroidStudioProjects/orgs/app/src/main/res/menu/menu_detalhes_produto.xml" value="0.24739583333333334" />
+        <entry key="..\:/Users/mfreirec/AndroidStudioProjects/orgs/app/src/main/res/menu/menu_detalhes_produtos.xml" value="0.25" />
       </map>
     </option>
   </component>
